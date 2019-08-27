@@ -1,0 +1,17 @@
+<button type="button" class="btn btn-success" (click)="onClick()">Click</button>
+<div [hidden]='displayContent'>
+    real hidden directive show/hide
+</div>
+<button type="button" class="btn btn-success" (click)="onShowClick()">showMe</button>
+<div *ngIf="showMe">
+    ngIf directive add/remove
+</div>
+<div *ngIf="!showMe">
+    not ngIf directive
+</div>
+<div>
+    hidden directive
+</div>
+<div>
+    hidden directive
+</div>

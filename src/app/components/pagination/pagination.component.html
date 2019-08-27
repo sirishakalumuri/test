@@ -1,0 +1,42 @@
+<div>
+    <button (click)="mostPrevious()">
+            <i class="fas fa-angle-double-left"></i>
+    </button>
+    <button (click)="previous()">
+        <i class="fas fa-angle-left"></i>
+    </button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>10</button>
+    <button (click)="next()">
+        <i class="fas fa-angle-right"></i>
+    </button>
+    <button (click)="mostNext()">
+            <i class="fas fa-angle-double-right"></i>
+    </button>
+</div>
+<table>
+    <tr>
+        <th>postId</th>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>body</th>
+        <th>index</th>
+    </tr>
+    <tr *ngFor="let comment of comments;index as i">
+        <td *ngIf="i>=initial && i<end">{{comment.postId}}</td>
+        <td *ngIf="i>=initial && i<end">{{comment.id}}</td>
+        <td *ngIf="i>=initial && i<end">{{comment.name}}</td>
+        <td *ngIf="i>=initial && i<end">{{comment.email}}</td>
+        <td *ngIf="i>=initial && i<end">{{comment.body}}</td>
+        <td *ngIf="i>=initial && i<end">{{i}}</td>
+    </tr>
+</table>

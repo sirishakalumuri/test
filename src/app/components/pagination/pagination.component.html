@@ -1,5 +1,5 @@
 <div>
-    <button (click)="setPage(0)">
+    <button [disabled]="page === 0" (click)="setPage(0)">
             <i class="fas fa-angle-double-left"></i>
     </button>
     <button [disabled]="page === 0" (click)="setPage(page - 1)">
@@ -19,7 +19,7 @@
     <button [disabled]="page === lastPage" (click)="setPage(page + 1)">
         <i class="fas fa-angle-right"></i>
     </button>
-    <button (click)="setPage(lastPage)">
+    <button [disabled]="page === lastPage" (click)="setPage(lastPage)">
             <i class="fas fa-angle-double-right"></i>
     </button>
 </div>

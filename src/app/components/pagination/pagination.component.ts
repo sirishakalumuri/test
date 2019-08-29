@@ -9,9 +9,11 @@ import { nextTick } from 'q';
 export class PaginationComponent implements OnInit {
 
   initial = 0;
-  end = 5;
+  end = 10;
   page = 0;
-  pagelimit=5;
+  pagelimit=10;
+  page_array = [1,2,3,4,5];
+  lastPage = 0;
 
   comments = [
     {
@@ -3519,27 +3521,28 @@ export class PaginationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.lastPage = (this.comments.length/this.pagelimit)-1;
   }
-  mostPrevious() {
-    // this.initial = 0;
-    // this.end = 10;
-    this.setPage(0);
-  }
-  mostNext() {
-    // this.initial = 490;
-    // this.end = 500;
-    this.setPage(49);
-  }
-  previous() {
-    // this.initial = this.initial - 10;
-    // this.end = this.end - 10;
-    this.setPage(this.page - 1);
-  }
-  next() {
-    // this.initial = this.initial + 10;
-    // this.end = this.end + 10;
-    this.setPage(this.page + 1);
-  }
+  // mostPrevious() {
+  //   // this.initial = 0;
+  //   // this.end = 10;
+  //   this.setPage(0);
+  // }
+  // mostNext() {
+  //   // this.initial = 490;
+  //   // this.end = 500;
+  //   this.setPage(99);
+  // }
+  // previous() {
+  //   // this.initial = this.initial - 10;
+  //   // this.end = this.end - 10;
+  //   this.setPage(this.page - 1);
+  // }
+  // next() {
+  //   // this.initial = this.initial + 10;
+  //   // this.end = this.end + 10;
+  //   this.setPage(this.page + 1);
+  // }
 
   setPage(page) {
     this.page = page;

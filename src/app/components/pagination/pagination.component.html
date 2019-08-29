@@ -1,11 +1,12 @@
 <div>
-    <button (click)="mostPrevious()">
+    <button (click)="setPage(0)">
             <i class="fas fa-angle-double-left"></i>
     </button>
-    <button (click)="previous()">
+    <button [disabled]="page === 0" (click)="setPage(page - 1)">
         <i class="fas fa-angle-left"></i>
     </button>
-    <button>1</button>
+    <button *ngFor="let parray of page_array;index as i" (click)=setPage(i)>{{i+1}}</button>
+    <!-- <button>1</button>
     <button>2</button>
     <button>3</button>
     <button>4</button>
@@ -14,11 +15,11 @@
     <button>7</button>
     <button>8</button>
     <button>9</button>
-    <button>10</button>
-    <button (click)="next()">
+    <button>10</button> -->
+    <button [disabled]="page === lastPage" (click)="setPage(page + 1)">
         <i class="fas fa-angle-right"></i>
     </button>
-    <button (click)="mostNext()">
+    <button (click)="setPage(lastPage)">
             <i class="fas fa-angle-double-right"></i>
     </button>
 </div>

@@ -12,7 +12,7 @@ export class PaginationComponent implements OnInit {
   end = 10;
   page = 0;
   pagelimit=10;
-  page_array = [1,2,3,4,5];
+  page_array = [];
   lastPage = 0;
 
   comments = [
@@ -3522,6 +3522,7 @@ export class PaginationComponent implements OnInit {
 
   ngOnInit() {
     this.lastPage = (this.comments.length/this.pagelimit)-1;
+    this.generatePageButtons();
   }
   // mostPrevious() {
   //   // this.initial = 0;
@@ -3548,5 +3549,18 @@ export class PaginationComponent implements OnInit {
     this.page = page;
     this.initial = page * this.pagelimit;
     this.end = this.initial + this.pagelimit;
+    this.generatePageButtons();
+  }
+  generatePageButtons(){
+    this.page_array=[];
+    for(let i=0; i<=this.lastPage; i++){
+      // if(i<10){
+        if(i>(this.page-2) && i<(this.page+2)){
+          this.page_array.push(i);
+        } 
+      // }
+      
+    }
+    console.log(this.page_array);
   }
 }

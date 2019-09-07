@@ -9,6 +9,8 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { DummyComponent } from './components/dummy/dummy.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { FormsModule } from '@angular/forms';
+import { HiglightDirective } from './higlight.directive';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     LoginComponent,
     SignUpComponent,
     DummyComponent,
-    PaginationComponent
+    PaginationComponent,
+    HiglightDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

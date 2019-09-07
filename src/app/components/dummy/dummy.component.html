@@ -9,9 +9,27 @@
 <div *ngIf="!showMe">
     not ngIf directive
 </div>
-<div>
-    hidden directive
+<div [ngClass]="{hal:showMe}">
+    ngClass directive
+</div>
+<div [ngStyle]="{'color':showMe?'red':'yellow'}">
+    style directive
+</div>
+<div appHiglight>
+    appHiglight directive
+</div>
+<div appHiglight>
+    appHiglight directive
+</div>
+<div appHiglight>
+    appHiglight directive
 </div>
 <div>
-    hidden directive
+    {{'MyPipes'|uppercase}}
+</div>
+<div>
+    {{'MyPipes'|lowercase}}
+</div>
+<div>
+    {{'myPipes'|titlecase}}
 </div>

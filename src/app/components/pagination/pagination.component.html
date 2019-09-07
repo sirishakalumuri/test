@@ -1,11 +1,12 @@
 <div>
     <button [disabled]="page === 0" (click)="setPage(0)">
-            <i class="fas fa-angle-double-left"></i>
+        <i class="fas fa-angle-double-left"></i>
     </button>
     <button [disabled]="page === 0" (click)="setPage(page - 1)">
         <i class="fas fa-angle-left"></i>
     </button>
-    <button *ngFor="let parray of page_array;index as i" (click)=setPage(parray)>{{parray+1}}</button>
+    <button *ngFor="let parray of page_array;index as i" [ngClass]="{'currentPage':parray===page}"
+        (click)=setPage(parray)>{{parray+1}}</button>
     <!-- <button>1</button>
     <button>2</button>
     <button>3</button>
@@ -20,8 +21,16 @@
         <i class="fas fa-angle-right"></i>
     </button>
     <button [disabled]="page === lastPage" (click)="setPage(lastPage)">
-            <i class="fas fa-angle-double-right"></i>
+        <i class="fas fa-angle-double-right"></i>
     </button>
+    <div>
+        <select [(ngModel)]="pagelimit" (change)="changePageLimit()">
+            <option value=5>5</option>
+            <option value=10>10</option>
+            <option value=15>15</option>
+            <option value=20>20</option>
+        </select>
+    </div>
 </div>
 <table>
     <tr>
@@ -32,7 +41,7 @@
         <th>body</th>
         <th>index</th>
     </tr>
-    <tr *ngFor="let comment of comments;index as i">
+    <tr appHiglight *ngFor="let comment of comments;index as i">
         <td *ngIf="i>=initial && i<end">{{comment.postId}}</td>
         <td *ngIf="i>=initial && i<end">{{comment.id}}</td>
         <td *ngIf="i>=initial && i<end">{{comment.name}}</td>

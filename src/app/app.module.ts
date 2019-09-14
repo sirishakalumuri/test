@@ -11,6 +11,8 @@ import { DummyComponent } from './components/dummy/dummy.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { FormsModule } from '@angular/forms';
 import { HiglightDirective } from './higlight.directive';
+import { MypipePipe } from './mypipe.pipe';
+import { LanguagePipe } from './language.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HiglightDirective } from './higlight.directive';
     SignUpComponent,
     DummyComponent,
     PaginationComponent,
-    HiglightDirective
+    HiglightDirective,
+    MypipePipe,
+    LanguagePipe
   ],
   imports: [
     BrowserModule,

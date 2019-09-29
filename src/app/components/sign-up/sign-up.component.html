@@ -1,20 +1,28 @@
-<form class="signup-container">
-    <div class="form-group">
-      <label for="signupUserName"><i class="fas fa-user"></i> User Name</label>
-      <input type="text" class="form-control" id="signupUserName" placeholder="Enter User Name">
+<form class="signup-container" [formGroup]="signupform">
+  <div class="form-group">
+    <label for="signupUserName"><i class="fas fa-user"></i> User Name</label>
+
+    <input type="text" class="form-control" id="signupUserName" formControlName="username"
+      placeholder="Enter User Name">
+    <small style="color:red" *ngIf="signupform.controls.username?.touched && signupform.controls.username?.errors?.minlength">Minimum
+      length is {{signupform.controls.username.errors.minlength.requiredLength}} but you typed is
+      {{signupform.controls.username.errors.minlength.actualLength}}</small>
+  </div>
+  <div class="form-group">
+    <label for="signupUserPassword"><i class="fas fa-key"></i> Password</label>
+    <input type="password" class="form-control" id="signupUserPassword" formControlName="password"
+      placeholder="Enter Password">
+  </div>
+  <div class="form-group">
+    <label for="signupResetPassword"><i class="fa fa-lock"></i> Reset Password</label>
+    <input type="password" class="form-control" id="signupResetPassword" formControlName="resetpassword"
+      placeholder="Reset Password">
+  </div>
+  <div class="form-row text-center">
+    <div class="col-12">
+      <button type="button" class="btn btn-success mr-20" (click)="signUp()"><i class="fas fa-user-plus"></i>
+        Signup</button>
+      <button type="button" class="btn btn-success"><i class="fa fa-lock"></i> Reset</button>
     </div>
-    <div class="form-group">
-      <label for="signupUserPassword"><i class="fas fa-key"></i> Password</label>
-      <input type="password" class="form-control" id="signupUserPassword" placeholder="Enter Password">
-    </div>
-    <div class="form-group">
-        <label for="signupResetPassword"><i class="fa fa-lock"></i> Reset Password</label>
-        <input type="password" class="form-control" id="signupResetPassword" placeholder="Reset Password">
-      </div>
-    <div class="form-row text-center">
-        <div class="col-12">
-            <button type="button" class="btn btn-success mr-20"><i class="fas fa-user-plus"></i> Signup</button>
-            <button type="button" class="btn btn-success"><i class="fa fa-lock"></i> Reset</button>
-        </div>
-    </div>
+  </div>
 </form>

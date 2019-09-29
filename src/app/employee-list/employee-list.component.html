@@ -1,0 +1,12 @@
+<div class="employeeCard" *ngFor="let data  of employeeList; index as i">
+    <img src="../../assets//dummy.jpg" alt="">
+    <div class="row">
+        <div class="col-md-8">
+            <p>{{data.Name}}</p>
+            <p>{{data.EmployeeID}}</p>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-danger" (click)="view(i)">View</button>
+        </div>
+    </div>
+</div>

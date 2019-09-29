@@ -6,6 +6,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { DummyComponent } from './components/dummy/dummy.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { from } from 'rxjs';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 const routes: Routes = [
@@ -13,7 +16,10 @@ const routes: Routes = [
   { path: 'body', component: BodyComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'dummy', component: DummyComponent },
-  { path: 'pagination', component: PaginationComponent }
+  { path: 'pagination', component: PaginationComponent },
+  { path: 'Lifecycle', component: LifecycleComponent },
+  { path: 'employeeList', component: EmployeeListComponent },
+  { path: 'employee', component: EmployeeComponent }
 ];
 
 @NgModule({
